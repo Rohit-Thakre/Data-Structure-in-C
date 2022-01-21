@@ -1,7 +1,7 @@
 # Data-Structure-in-C
 ## File added in this repo as ordered below. 
 
-###Singly link list.
-###Doubly link list.
+#### 1.Singly link list.
+#### 2.Doubly link list.
 
 
