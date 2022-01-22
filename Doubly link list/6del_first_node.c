@@ -39,7 +39,8 @@ Node *at_start(Node *head, int data)
     return head;
 }
 
-Node *del_first(Node *head)
+// method 1
+Node *del_first_m1(Node *head)
 {
     Node *current = head;
     head = head->next;
@@ -47,6 +48,15 @@ Node *del_first(Node *head)
 
     free(current);
     current = NULL;
+    return head;
+}
+
+// method 2
+Node *del_first_m2(Node *head)
+{
+    head = head->next;
+    free(head->prev);
+    head->prev = NULL;
     return head;
 }
 int main()
@@ -59,7 +69,8 @@ int main()
     head = at_start(head, 5);
     head = at_start(head, 2);
 
-    head = del_first(head);
+    head = del_first_m1(head);
+    head = del_first_m2(head);
 
     traverse(head);
 
