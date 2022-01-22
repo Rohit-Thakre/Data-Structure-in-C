@@ -10,6 +10,7 @@ struct node
 
 typedef struct node Node;
 
+// reverse fun
 Node *link_reverse(Node *head)
 {
     Node *temp = NULL, *temp2 = NULL;
