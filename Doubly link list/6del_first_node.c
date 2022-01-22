@@ -68,10 +68,12 @@ int main()
     head = create_node(10);
     head = at_start(head, 5);
     head = at_start(head, 2);
+    printf("before deletion.\n");
+    traverse(head);
 
     head = del_first_m1(head);
-    head = del_first_m2(head);
-
+    // head = del_first_m2(head);
+    printf("\nafter deletion\n");
     traverse(head);
 
     return 0;
