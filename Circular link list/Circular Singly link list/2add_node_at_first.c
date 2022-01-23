@@ -41,7 +41,7 @@ int main()
     system("color a");
 
     int data = 35;
-    Node *tail, *new_node;
+    Node *tail = NULL;
     tail = circularSingly(10);
 
     tail = add_first(tail, 5);
