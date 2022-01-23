@@ -33,6 +33,7 @@ Node *add_at_first(Node *tail, int data)
 {
     Node *temp = circularSingly(data);
     temp->next = tail->next;
+    temp->prev = tail;
     tail->next = temp;
     return tail;
 }
