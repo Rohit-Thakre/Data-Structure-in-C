@@ -65,6 +65,9 @@ int search_index(Node *tail, int element)
         temp = temp->next;
         index++;
     } while (temp != tail->next);
+
+    printf("\n\nthe element is not found in link list");
+    return -1;
 }
 int main()
 {
@@ -78,7 +81,7 @@ int main()
     tail = add_at_end(tail, 50);
     display(tail);
 
-    int element = 30;
+    int element = 660;
     printf("\n\n%d  is at pos :%d\n", element, search_index(tail, element));
 
     return 0;
