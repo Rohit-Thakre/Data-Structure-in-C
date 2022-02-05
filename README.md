@@ -4,5 +4,5 @@
 #### 1.Singly link list.
 #### 2.Doubly link list.
 #### 3.Circular link list.
-
+#### 4.Stack.
 
