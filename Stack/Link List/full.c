@@ -106,12 +106,17 @@ int main()
     top = push(top, 30);
     top = push(top, 40);
     top = push(top, 90);
+
     traverse(head);
+    printf("head : %d ", head);
+
     printf("\ncount : %d\n", count_node());
 
     pop(head);
     printf("count : %d\n", count_node());
+
     // traverse(head);
+    printf("head : %d ", head);
 
     return 0;
 }
