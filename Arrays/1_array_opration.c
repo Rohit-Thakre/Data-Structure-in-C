@@ -92,13 +92,45 @@ void rotation(int *a, int size)
     }
     a[0] = lst;
 }
+
+void insert(int *A, int size, int data) // sorted array
+{
+    int i = 0;
+
+    int cnt = count(A, size);
+    if (cnt < size)
+    {
+        while (A[i] < data)
+            i++;
+        // A[i] = data;
+        printf(" i: %d\n", i);
+        // right_shift(&A[i], size - i);
+
+        int sz = size - 1;
+        while (i < sz)
+        {
+            A[sz] = A[sz - 1];
+            sz--;
+        }
+        A[i] = data;
+    }
+}
+
+int count(int *a, int size)
+{
+    int i = 0;
+    while (a[i])
+        i++;
+
+    return i;
+}
 int main()
 {
     system("cls");
     system("color a");
 
-    int A[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int size = 10;
+    int A[10] = {1, 2, 3, 4, 6, 7, 8, 9};
 
     // printf("the index is : %d\n", get_index(A, size, 8));
 
@@ -113,8 +145,10 @@ int main()
 
     // left_shift(A, size);
     // right_shift(A, size);
+    // rotation(A, size);
 
-    rotation(A, size);
+    insert(A, size, 5);
     display(A, size);
+
     return 0;
 }
