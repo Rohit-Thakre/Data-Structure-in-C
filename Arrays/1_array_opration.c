@@ -124,6 +124,57 @@ int count(int *a, int size)
 
     return i;
 }
+
+int *merge(int a[], int a_size, int b[], int b_size)
+{
+    int size = a_size + b_size;
+
+    int *ar = (int *)malloc(sizeof(int) * size);
+
+    int i = 0, j = 0, k = 0;
+
+    while (a[i] && b[j] && i < a_size && j < b_size)
+    {
+        if (a[i] < b[j])
+        {
+            ar[k] = a[i];
+            k++;
+            i++;
+        }
+        else if (a[i] > b[j])
+        {
+            ar[k] = b[j];
+            k++;
+            j++;
+        }
+        else
+        {
+            i++;
+            j++;
+        }
+    }
+
+    if (!a[i])
+    {
+        while (j < b_size)
+        {
+            ar[k] = b[j];
+            k++;
+            j++;
+        }
+    }
+    else if (!b[j])
+    {
+        while (i < b_size)
+        {
+            ar[k] = b[i];
+            k++;
+            i++;
+        }
+    }
+
+    return ar;
+}
 int main()
 {
     system("cls");
@@ -147,8 +198,15 @@ int main()
     // right_shift(A, size);
     // rotation(A, size);
 
-    insert(A, size, 5);
-    display(A, size);
+    // insert(A, size, 5);
+    // display(A, size);
+
+    int *p;
+    int a[5] = {1, 3, 5, 7, 9};
+    int b[5] = {2, 4, 6, 8, 10};
+
+    p = merge(a, 5, b, 5);
+    display(p, 10);
 
     return 0;
 }
