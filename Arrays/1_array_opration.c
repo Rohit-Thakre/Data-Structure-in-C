@@ -165,7 +165,7 @@ int *merge(int a[], int a_size, int b[], int b_size)
     }
     else if (!b[j])
     {
-        while (i < b_size)
+          while (i < b_size)
         {
             ar[k] = b[i];
             k++;
